@@ -1,0 +1,36 @@
+:root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;  
+    
+    --border-radius-base: 16px;
+    --box-shadow-base: 12px; 
+    
+    --color-light: white;
+    --color-neutral-bright: #007bff;
+    --color-neutral-dark: #555;
+    --color-dark: #2c3e50;
+    
+    --font-family: sans-serif;
+}
+
+.course-listing {
+    margin: 24px;
+    padding: var(--spacing-sm);
+}
+
+.course-pagetitle {
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+.courses {
+    padding: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
