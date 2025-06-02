@@ -9,6 +9,7 @@
 /frontend/*.log
 
 # Python/Django
+node_modules/
 **/__pycache__/
 /backend/*.sqlite3
 /backend/.env
