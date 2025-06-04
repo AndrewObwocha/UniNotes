@@ -36,7 +36,7 @@ function Form({ route, method }) {
     
     return (
         <>
-            <h1>{methodName}</h1>
+            <h1 className="form-title">{ methodName }</h1>
             <form
                 className='form-container'
                 onSubmit={(e) => handleSumbit(e)}

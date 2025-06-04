@@ -25,7 +25,7 @@ function CreateNote() {
 
     return (
         <div>
-            <h2>Create a note</h2>
+            <h2 className="notes-title">Create a note</h2>
             <form onSubmit={ createNote }>
                 <label htmlFor='title'>Title:</label>
                 <br />

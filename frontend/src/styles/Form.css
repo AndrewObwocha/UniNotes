@@ -1,3 +1,30 @@
+:root {
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;  
+    
+    --border-radius-base: 16px;
+    --box-shadow-base: 12px; 
+    
+    --color-light: white;
+    --color-neutral-bright: #007bff;
+    --color-neutral-dark: #555;
+    --color-dark: #2c3e50;
+    
+    --font-family: sans-serif;
+}
+
+.form-title {
+    margin: 24px;
+    padding: var(--spacing-sm);
+    color: var(--color-dark);
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
 .form-container {
   display: flex;
   flex-direction: column;
