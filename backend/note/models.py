@@ -1,16 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+from course.models import Course
 
 # Create your models here.
-class Course(models.Model):
-    title = models.CharField(max_length=100, default='Unknown Course')
-    code = models.CharField(max_length=10, default='N/A')
-    instructor = models.CharField(max_length=100, default='Unknown Instructor')
-
-    def __str__(self):
-        return self.title
-
-
 class Note(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()

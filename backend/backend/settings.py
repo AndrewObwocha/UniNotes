@@ -56,8 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'login_registration',
-    'note_manipulation',
+    'authentication',
+    'course',
+    'note',
     'rest_framework',
     'corsheaders',
 ]
