@@ -1,6 +1,14 @@
 # Course Notes Application
 
-A full-stack web application for organizing and managing notes by course. Users can register, authenticate, view available courses, and create personal notes associated with specific courses.
+## About
+
+A full-stack note management system designed to centralize academic notes from various studying platforms into one organized interface. Built as a learning project to demonstrate modern web development skills, this application provides students with a unified space to manage their course materials without the fragmentation of multiple note-taking tools.
+
+**Current Status**: Early prototype with core functionality for personal note organization
+
+**Technical Focus**: Showcases Django REST API development, React frontend integration, JWT authentication, and database modeling patterns
+
+**Vision**: While currently designed for individual students, the architecture supports future expansion into collaborative features and institutional use cases.
 
 ## Features
 
