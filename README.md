@@ -26,8 +26,8 @@ My vision is to free student time to do what matters to them more beyond studyin
 ### Backend Setup
 1. **Clone the repository**
    ```sh
-   git clone https://github.com/{yourUsername}/KnowledgeGraph_Backend.git
-   cd KnowledgeGraph_Backend
+   git clone https://github.com/{yourUsername}/UniNotes.git
+   cd UniNotes
    ```
 2. **Create and activate virtual environment**
    ```sh
