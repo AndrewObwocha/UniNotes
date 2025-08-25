@@ -89,5 +89,5 @@ This project is licensed under the MIT License.
 For further information, feel free to initiate contact:
 
 - **Email** — obwochandrew@gmail.com 
-- **Project Link** — https://github.com/AndrewObwocha/KnowledgeGraph_Backend
+- **Project Link** — https://github.com/AndrewObwocha/UniNotes
 
