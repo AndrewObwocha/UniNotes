@@ -1,117 +1,65 @@
-# Course Notes Application
+# UniNotes React — Django Application
 
-## About
+## Welcome!
+UniNotes is a web application designed to centralize course material from your professor, textbook, and anywhere online, all in one place. Leveraging REST APIs for resource management and JWT for authentication, this application provides secure, personalized note management. I aim to improve students' studying efficiency by minimizing the friction of looking for resources they previously found.
 
-A full-stack note management system designed to centralize academic notes from various studying platforms into one organized interface. Built as a learning project to demonstrate modern web development skills, this application provides students with a unified space to manage their course materials without the fragmentation of multiple note-taking tools.
-
-**Current Status**: Early prototype with core functionality for personal note organization
-
-**Technical Focus**: Showcases Django REST API development, React frontend integration, JWT authentication, and database modeling patterns
-
-**Vision**: While currently designed for individual students, the architecture supports future expansion into collaborative features and institutional use cases.
+## UniNotes' Vision
+My vision is to free student time to do what matters to them more beyond studying. Repeatedly looking for that textbook or the 'slides' would compound into over 30 minutes of wasted time while studying. This application is my solution to that problem.
 
 ## Features
-
 - **User Authentication**: JWT-based registration and login system
 - **Course Management**: View available courses with instructor information
-- **Personal Notes**: Create, view, and delete notes organized by course
-- **Secure Access**: Users can only access their own notes
+- **Personal Notes**: Create, view, update, and delete notes organized by course
 
-## Technology Stack
 
-### Backend
-- **Framework**: Django (latest) with Django REST Framework
-- **Database**: SQLite (development)
-- **Authentication**: JWT (JSON Web Tokens) using `djangorestframework-simplejwt`
-- **Language**: Python 3
+## Technologies Used
+- **React** — Presents a usable UI to the end-user 
+- **REST API** — Handles HTTP requests from the frontend to the backend
+- **Django (Python)** — Implements the backend operations, including routing, server logic, ORMs, etc.
+- **PostgreSQL Database** — Manages data storage, including courses and notes
+ 
+## Setup & Running
 
-### Frontend
-- **Framework**: React
-- **HTTP Client**: Axios (api integration)
-- **Styling**: CSS
-
-## API Endpoints
-
-### Authentication (`/authentication/`)
-- `POST /authentication/` - User registration
-- `POST /authentication/token/get` - Obtain JWT token pair
-- `POST /authentication/token/refresh` - Refresh access token
-
-### Courses (`/courses/`)
-- `GET /courses/course/list` - List all available courses
-
-### Notes (`/notes/`)
-- `GET /notes/note/createAndList` - List user's notes (with optional `?course=<course_id>` filter)
-- `POST /notes/note/createAndList` - Create a new note
-- `DELETE /notes/note/delete/<int:pk>` - Delete a specific note (user must be owner)
-
-## Data Models
-
-### Course
-- `title` - Course name (max 100 characters)
-- `code` - Course code (max 10 characters)
-- `instructor` - Instructor name (max 100 characters)
-
-### Note
-- `title` - Note title (max 100 characters)
-- `content` - Note content (text field)
-- `created_at` - Auto-generated timestamp
-- `author` - Foreign key to User (owner of the note)
-- `course` - Foreign key to Course
-
-## Setup Instructions
+### Pre-Requisites
+- Download and install Python 3.8 from the official website — https://www.python.org/downloads/
 
 ### Backend Setup
-
-1. **Clone the repository and navigate to backend directory**
-   ```bash
-   cd backend
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/{yourUsername}/KnowledgeGraph_Backend.git
+   cd KnowledgeGraph_Backend
    ```
-
 2. **Create and activate virtual environment**
-   ```bash
+   ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
-
-3. **Install dependencies**
-   ```bash
-   pip install django
-   pip install djangorestframework
-   pip install djangorestframework-simplejwt
-   pip install django-cors-headers
-   ```
-
+3. **Install the dependencies**
+	 ```sh
+	 pip3 install -r requirements.txt
+	 ```
 4. **Run database migrations**
-   ```bash
+   ```sh
    python manage.py makemigrations
    python manage.py migrate
    ```
-
-5. **Create superuser (optional)**
-   ```bash
-   python manage.py createsuperuser
-   ```
-
-6. **Start development server**
-   ```bash
+5. **Start development server**
+   ```sh
    python manage.py runserver
    ```
+6. **Access Backend**
+	 - Visit `http://localhost:8000` for the backend server.
 
-The backend will be available at `http://localhost:8000`
-
-### Frontend Setup
+### Frontend setup
 
 1. **Navigate to frontend directory**
-   ```bash
+   ```sh
    cd frontend
    ```
-
 2. **Install dependencies**
-   ```bash
+   ```sh
    npm install
    ```
-
 3. **Create environment variables file**
    Create a `.env` file in the frontend root directory:
    ```env
@@ -119,38 +67,27 @@ The backend will be available at `http://localhost:8000`
    REACT_APP_REFRESH_TOKEN=your_jwt_refresh_token
    ```
    Note: These tokens will be set after user login
-
 4. **Start development server**
-   ```bash
+   ```sh
    npm start
    ```
+5. **Access Frontend**
+	 - Visit `http://localhost:3000` for the frontend server.
 
-The frontend will be available at `http://localhost:3000`
+## Contributing
 
-## Usage
+Contribution is not only welcome, but encouraged! Here are some ways you can contribute:
 
-1. **Register**: Create a new user account through the registration endpoint
-2. **Login**: Authenticate to receive JWT tokens
-3. **Browse Courses**: View all available courses on the home page
-4. **Manage Notes**: Create, view, and delete personal notes for specific courses
-5. **Filter Notes**: Use course parameter to filter notes by specific course
+- **Feature Requests** — You can send feature ideas by opening an issue with the tag feature-request.
+- **Bug reports** — You can report a bug by opening an issue with the tag bug
+- **Pull requests** — You can contribute directly by forking, coding, and submitting PRs!
 
-## Security Features
+## License
 
-- JWT-based authentication for secure API access
-- User isolation - users can only access their own notes
-- Permission-based views with authentication requirements
-- CORS configuration for cross-origin requests
+This project is licensed under the MIT License.
 
-## Development Notes
+For further information, feel free to initiate contact:
 
-- Database uses SQLite for development - consider PostgreSQL for production deployment
-- No additional environment variables required for backend configuration
+- **Email** — obwochandrew@gmail.com 
+- **Project Link** — https://github.com/AndrewObwocha/KnowledgeGraph_Backend
 
-## Future Enhancements
-
-- Course enrollment system
-- Note sharing capabilities
-- Search and filtering functionality
-- File attachments for notes
-- Production deployment configuration
