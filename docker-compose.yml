@@ -1,0 +1,50 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: uninotes
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
+      POSTGRES_DB: uninotes
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U uninotes -d uninotes"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+    working_dir: /uninotes
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/uninotes
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_NAME: uninotes
+      DB_USER: uninotes
+      DB_PASSWORD: ${DATABASE_PASSWORD}
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./frontend
+    working_dir: /uninotes
+    command: npm run dev -- --host --port 5173
+    volumes:
+      - ./frontend:/uninotes
+      - /uninotes/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: ${VITE_API_URL}
+    restart: unless-stopped
