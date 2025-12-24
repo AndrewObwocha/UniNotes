@@ -6,7 +6,6 @@ from rest_framework.validators import UniqueValidator
 User = get_user_model()
 
 class UserSerializer(serializers.ModelSerializer):
-    # Add explicit email validation (standard for real apps)
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
