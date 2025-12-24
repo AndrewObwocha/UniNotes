@@ -25,3 +25,5 @@ env/
 # System files
 .DS_Store
 git
+
+.env
