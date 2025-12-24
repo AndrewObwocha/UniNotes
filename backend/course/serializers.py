@@ -4,7 +4,7 @@ from .models import Course
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        fields = ["id", "title", "code", "instructor"]
+        fields = ["id", "code", "title", "instructor", "created_at"]
 
     def validate_code(self, value):
         return value.upper()
