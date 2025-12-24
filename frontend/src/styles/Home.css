@@ -1,36 +1,68 @@
 :root {
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --spacing-xl: 4rem;  
-    
-    --border-radius-base: 16px;
-    --box-shadow-base: 12px; 
-    
-    --color-light: white;
-    --color-neutral-bright: #007bff;
-    --color-neutral-dark: #555;
-    --color-dark: #2c3e50;
-    
-    --font-family: sans-serif;
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --border-radius-base: 16px;
+  --box-shadow-base: 0 18px 40px rgba(15, 23, 42, 0.12);
+
+  --color-page-bg: #f5f7fb;
+  --color-light: #ffffff;
+  --color-neutral-bright: #2563eb;
+  --color-neutral-dark: #4b5563;
+  --color-dark: #111827;
+
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-page-bg);
+  color: var(--color-dark);
+  font-family: var(--font-family);
+}
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg) var(--spacing-xl);
 }
 
 .course-listing {
-    margin: 24px;
-    padding: var(--spacing-sm);
+  margin-top: var(--spacing-xl);
 }
 
 .course-pagetitle {
-    color: var(--color-dark);
-    font-size: 1.5rem;
-    font-weight: 800;
-    text-align: left;
+  color: var(--color-dark);
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--spacing-md);
+}
+
+.course-subtitle {
+  color: var(--color-neutral-dark);
+  font-size: 0.95rem;
+  margin-bottom: var(--spacing-lg);
 }
 
 .courses {
-    padding: 12px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+  padding: var(--spacing-sm) 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 768px) {
+  .page-shell {
+    padding: 0 var(--spacing-md) var(--spacing-lg);
+  }
+
+  .course-pagetitle {
+    font-size: 1.6rem;
+  }
 }
