@@ -1,5 +1,5 @@
 FROM node:22-alpine
-WORKDIR /uninotes
+WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
