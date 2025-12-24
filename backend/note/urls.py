@@ -1,7 +1,7 @@
-from django.urls import path
+from django.urls import path, URLPattern, URLResolver
 from . import views
 
-urlpatterns = [
-    path("note/createAndList", views.NoteListCreate.as_view(), name="noteList"),
-    path("note/delete/<int:pk>", views.NoteDelete.as_view(), name="deleteNote"),
+urlpatterns: list[URLPattern | URLResolver] = [
+    path("", views.NoteListCreate.as_view(), name="note-list"),
+    path("<int:pk>/", views.NoteDelete.as_view(), name="note-detail"),
 ]
