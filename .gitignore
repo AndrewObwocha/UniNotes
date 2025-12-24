@@ -1,29 +1,5 @@
-# Node and React
-/frontend/node_modules/
-/frontend/.env
-/frontend/.DS_Store
-/frontend/build/
-/frontend/dist/
-/frontend/.next/
-/frontend/.parcel-cache/
-/frontend/*.log
-
 # Python/Django
-node_modules/
 **/__pycache__/
-/backend/*.sqlite3
-/backend/.env
-*.pyc
-*.pyo
-*.pyd
-*.log
 
-# Virtual environments
-venv/
-env/
-
-# System files
-.DS_Store
-git
-
+# Environment variables
 .env
