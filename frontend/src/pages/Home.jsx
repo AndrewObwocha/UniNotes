@@ -13,7 +13,7 @@ function Home() {
 
   const getCourses = () => {
     api
-      .get("/courses/course/list")
+      .get("courses/")
       .then((res) => res.data)
       .then((data) => {
         setCourses(data);

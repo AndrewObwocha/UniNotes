@@ -15,7 +15,7 @@ function Notes() {
 
   const getNotes = () => {
     api
-      .get("/notes/note/createAndList", {
+      .get("notes/", {
         params: { course: course },
       })
       .then((res) => res.data)
