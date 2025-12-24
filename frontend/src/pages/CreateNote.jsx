@@ -15,7 +15,7 @@ function CreateNote() {
     const dataToSend = { title, content, course };
     console.log(dataToSend);
     api
-      .post("/course_notes/notes/create_list", dataToSend)
+      .post("/notes/note/createAndList", dataToSend)
       .then((res) => {
         if (res.status === 201) alert("Note created!");
         else alert("Failed! Some error occurred.");
