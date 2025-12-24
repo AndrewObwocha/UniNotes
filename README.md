@@ -1,93 +1,47 @@
-# UniNotes React — Django Application
+# UniNotes: University Note‑Taking App with React, Django & PostgreSQL
 
-## Welcome!
-UniNotes is a web application designed to centralize course material from your professor, textbook, and anywhere online, all in one place. Leveraging REST APIs for resource management and JWT for authentication, this application provides secure, personalized note management. I aim to improve students' studying efficiency by minimizing the friction of looking for resources they previously found.
+## Capture, organize, and revisit your university notes in one place.
 
-## UniNotes' Vision
-My vision is to free student time to do what matters to them more beyond studying. Repeatedly looking for that textbook or the 'slides' would compound into over 30 minutes of wasted time while studying. This application is my solution to that problem.
+This is a full‑stack note‑taking platform with a React + Vite frontend, a Django REST API backend, and a PostgreSQL database running in Docker. It offers JWT-based authentication, course-linked notes, responsive UI components, and interactive CRUD workflows for organizing and reviewing university material and exams.
 
-## Features
-- **User Authentication**: JWT-based registration and login system
-- **Course Management**: View available courses with instructor information
-- **Personal Notes**: Create, view, update, and delete notes organized by course
+- Centralizes lecture slides, textbook excerpts, and online resources by course.
+- Secure registration, login, and JWT-protected routes for private notes.
+- Create, edit, and delete notes linked to specific courses.
+- Filter and browse notes by course for focused revision.
+- Clean, responsive UI optimized for laptops and mobile devices.
+- Dockerized services for consistent, reproducible local deployments.
 
+## How to install UniNotes on Docker
 
-## Technologies Used
-- **React** — Presents a usable UI to the end-user 
-- **REST API** — Handles HTTP requests from the frontend to the backend
-- **Django (Python)** — Implements the backend operations, including routing, server logic, ORMs, etc.
-- **PostgreSQL Database** — Manages data storage, including courses and notes
- 
-## Setup & Running
+These steps assume no prior developer experience—just follow them in order.
 
-### Pre-Requisites
-- Download and install Python 3.8 from the official website — https://www.python.org/downloads/
-
-### Backend Setup
-1. **Clone the repository**
-   ```sh
-   git clone https://github.com/{yourUsername}/UniNotes.git
+1. Install Docker Desktop from the official Docker website and open it.
+2. Download this project’s code from GitHub ("Code → Download ZIP"), then unzip the folder.
+3. Open a terminal and navigate into the project folder, for example:
+   ```bash
    cd UniNotes
    ```
-2. **Create and activate virtual environment**
-   ```sh
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
+4. Create a file named `.env` in the project root and add:
+   ```bash
+   DATABASE_PASSWORD=yourStrongPasswordHere
+   VITE_API_URL=http://backend:8000
    ```
-3. **Install the dependencies**
-	 ```sh
-	 pip3 install -r requirements.txt
-	 ```
-4. **Run database migrations**
-   ```sh
-   python manage.py makemigrations
-   python manage.py migrate
+5. In the same terminal, start everything with:
+   ```bash
+   docker compose up --build
    ```
-5. **Start development server**
-   ```sh
-   python manage.py runserver
-   ```
-6. **Access Backend**
-	 - Visit `http://localhost:8000` for the backend server.
+6. Wait until the logs show the backend and frontend are running, then open your browser at:
+   - Frontend: http://localhost:5173
+   - API (for reference): http://localhost:8000
 
-### Frontend setup
+## How to tweak this project for your own use cases
 
-1. **Navigate to frontend directory**
-   ```sh
-   cd frontend
-   ```
-2. **Install dependencies**
-   ```sh
-   npm install
-   ```
-3. **Create environment variables file**
-   Create a `.env` file in the frontend root directory:
-   ```env
-   REACT_APP_ACCESS_TOKEN=your_jwt_access_token
-   REACT_APP_REFRESH_TOKEN=your_jwt_refresh_token
-   ```
-   Note: These tokens will be set after user login
-4. **Start development server**
-   ```sh
-   npm start
-   ```
-5. **Access Frontend**
-	 - Visit `http://localhost:3000` for the frontend server.
+This project was predominantly designed to help any student in need, feel free to clone and rename this project to use for your own purposes. Be as creativeas you wish!
 
-## Contributing
+## Find a bug?
 
-Contribution is not only welcome, but encouraged! Here are some ways you can contribute:
-
-- **Feature requests** — You can send feature ideas by opening an issue with the tag feature-request.
-- **Bug reports** — You can report a bug by opening an issue with the tag bug
-- **Pull requests** — You can contribute directly by forking, coding, and submitting PRs!
+If you found an issue or would like to submit an improvement to this project, please submit an issue using the issues tabs above. If you would like to submit a PR with a fix, reference the issue you created!
 
 ## License
 
 This project is licensed under the MIT License.
-
-For further information, feel free to initiate contact:
-
-- **Email** — obwochandrew@gmail.com 
-- **Project Link** — https://github.com/AndrewObwocha/UniNotes
-
